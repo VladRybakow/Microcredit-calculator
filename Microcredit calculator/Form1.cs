@@ -42,12 +42,12 @@ namespace Microcredit_calculator
             double[] SumPer = Percent.Text.Split(' ').Select(x => double.Parse(x)).ToArray();
             var SumPersent = percents.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumPersent = SumPersent / 10 / days;
-
+            /*
             if (SumPersent != days)
             {
                 MessageBox.Show("Количество дней не совпадают с количеством ставок");
                 Application.Restart();
-            }
+            }*/
 
             if (Sum > 500000)
             {

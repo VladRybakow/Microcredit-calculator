@@ -41,6 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Save = new System.Windows.Forms.Button();
+            this.Load = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Amount
@@ -155,11 +157,31 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Effective rate";
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(26, 388);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(100, 40);
+            this.Save.TabIndex = 13;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            // 
+            // Load
+            // 
+            this.Load.Location = new System.Drawing.Point(183, 388);
+            this.Load.Name = "Load";
+            this.Load.Size = new System.Drawing.Size(100, 40);
+            this.Load.TabIndex = 14;
+            this.Load.Text = "Load";
+            this.Load.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 484);
+            this.Controls.Add(this.Load);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -196,6 +218,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Button Load;
     }
 }
 
