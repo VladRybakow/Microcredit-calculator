@@ -42,7 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Save = new System.Windows.Forms.Button();
-            this.Load = new System.Windows.Forms.Button();
+            this.Loading = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // Amount
@@ -159,28 +161,34 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(26, 388);
+            this.Save.Location = new System.Drawing.Point(26, 372);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(100, 40);
+            this.Save.Size = new System.Drawing.Size(100, 49);
             this.Save.TabIndex = 13;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // Load
+            // Loading
             // 
-            this.Load.Location = new System.Drawing.Point(183, 388);
-            this.Load.Name = "Load";
-            this.Load.Size = new System.Drawing.Size(100, 40);
-            this.Load.TabIndex = 14;
-            this.Load.Text = "Load";
-            this.Load.UseVisualStyleBackColor = true;
+            this.Loading.Location = new System.Drawing.Point(183, 372);
+            this.Loading.Name = "Loading";
+            this.Loading.Size = new System.Drawing.Size(100, 49);
+            this.Loading.TabIndex = 14;
+            this.Loading.Text = "Loading";
+            this.Loading.UseVisualStyleBackColor = true;
+            this.Loading.Click += new System.EventHandler(this.Loading_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 484);
-            this.Controls.Add(this.Load);
+            this.ClientSize = new System.Drawing.Size(1032, 505);
+            this.Controls.Add(this.Loading);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -219,7 +227,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Button Load;
+        private System.Windows.Forms.Button Loading;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

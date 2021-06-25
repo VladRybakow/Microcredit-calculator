@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Microcredit_calculator
 {
@@ -42,12 +43,6 @@ namespace Microcredit_calculator
             double[] SumPer = Percent.Text.Split(' ').Select(x => double.Parse(x)).ToArray();
             var SumPersent = percents.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumPersent = SumPersent / 10 / days;
-            /*
-            if (SumPersent != days)
-            {
-                MessageBox.Show("Количество дней не совпадают с количеством ставок");
-                Application.Restart();
-            }*/
 
             if (Sum > 500000)
             {
@@ -88,6 +83,35 @@ namespace Microcredit_calculator
         private void InterestAmount_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Load_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Loading_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    StreamWriter file = new StreamWriter("C:\\Sample.txt");
+                    file.WriteLine(TotalPayout);
+                }
+                catch
+                {
+                    MessageBox.Show("Невозможно открыть файл ");
+                }
+            }
         }
     }
 }
