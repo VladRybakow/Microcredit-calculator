@@ -43,13 +43,19 @@ namespace Microcredit_calculator
             var SumPersent = percents.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
             SumPersent = SumPersent / 10 / days;
 
+            if (SumPersent != days)
+            {
+                MessageBox.Show("Количество дней не совпадают с количеством ставок");
+                Application.Restart();
+            }
+
             if (Sum > 500000)
             {
                 MessageBox.Show("Сумма превышает возможную выдачу микрокретида");
                 Application.Restart();
             }
 
-            if (days > 0 || days > 365)
+            if (days <= 0 || days > 365)
             {
                 MessageBox.Show("Количество дней не соответсвует правилам нашей компании");
                 Application.Restart();
@@ -59,7 +65,9 @@ namespace Microcredit_calculator
             {
                 TotalPayout.Text = Convert.ToString((Sum / 100) * SumPersent * days + Sum);
                 InterestAmount.Text = Convert.ToString(((Sum / 100) * SumPersent * days + Sum) - Sum);
+                EffectiveRate.Text = Convert.ToString(SumPersent);
             }
+
         }
 
         private void Percent_TextChanged(object sender, EventArgs e)
