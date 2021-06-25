@@ -35,9 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Calculate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TotalPayout = new System.Windows.Forms.TextBox();
+            this.InterestAmount = new System.Windows.Forms.TextBox();
+            this.EffectiveRate = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.Amount.Name = "Amount";
             this.Amount.Size = new System.Drawing.Size(100, 20);
             this.Amount.TabIndex = 0;
+            this.Amount.TextChanged += new System.EventHandler(this.Amount_TextChanged);
             // 
             // Days
             // 
@@ -63,6 +64,7 @@
             this.Percent.Name = "Percent";
             this.Percent.Size = new System.Drawing.Size(936, 20);
             this.Percent.TabIndex = 2;
+            this.Percent.TextChanged += new System.EventHandler(this.Percent_TextChanged);
             // 
             // label1
             // 
@@ -103,26 +105,28 @@
             this.Calculate.UseVisualStyleBackColor = true;
             this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
-            // textBox1
+            // TotalPayout
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.TotalPayout.Location = new System.Drawing.Point(183, 176);
+            this.TotalPayout.Name = "TotalPayout";
+            this.TotalPayout.Size = new System.Drawing.Size(100, 20);
+            this.TotalPayout.TabIndex = 7;
+            this.TotalPayout.TextChanged += new System.EventHandler(this.TotalPayout_TextChanged);
             // 
-            // textBox2
+            // InterestAmount
             // 
-            this.textBox2.Location = new System.Drawing.Point(183, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.InterestAmount.Location = new System.Drawing.Point(183, 231);
+            this.InterestAmount.Name = "InterestAmount";
+            this.InterestAmount.Size = new System.Drawing.Size(100, 20);
+            this.InterestAmount.TabIndex = 8;
+            this.InterestAmount.TextChanged += new System.EventHandler(this.InterestAmount_TextChanged);
             // 
-            // textBox3
+            // EffectiveRate
             // 
-            this.textBox3.Location = new System.Drawing.Point(183, 288);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.EffectiveRate.Location = new System.Drawing.Point(183, 288);
+            this.EffectiveRate.Name = "EffectiveRate";
+            this.EffectiveRate.Size = new System.Drawing.Size(100, 20);
+            this.EffectiveRate.TabIndex = 9;
             // 
             // label4
             // 
@@ -159,9 +163,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EffectiveRate);
+            this.Controls.Add(this.InterestAmount);
+            this.Controls.Add(this.TotalPayout);
             this.Controls.Add(this.Calculate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -186,9 +190,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Calculate;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TotalPayout;
+        private System.Windows.Forms.TextBox InterestAmount;
+        private System.Windows.Forms.TextBox EffectiveRate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
